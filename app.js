@@ -34,7 +34,11 @@ app.get("/compose", (req, res) => {
 });
 
 app.post("/compose", (req, res) => {
-  console.log (req.body.txtCompose);
+ 
+  let post = {
+    postTitle : req.body.postTitle,
+    postBody : req.body.postBody
+  }
 });
 
 
