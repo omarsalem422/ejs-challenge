@@ -17,23 +17,16 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-let homeContent = {
-  homeStartingContent: homeStartingContent,
-  aboutContent : aboutContent,
-  contactContent : contactContent
-
-};
-
 app.get("/", (req, res) => {
-  res.render('home', homeContent);
+  res.render('home', {homeStartingContent: homeStartingContent});
 });
 
 app.get("/about", (req, res) => {
-  res.render('about', homeContent);
+  res.render('about', {aboutContent : aboutContent});
 });
 
 app.get("/contact", (req, res) => {
-  res.render('contact', homeContent);
+  res.render('contact', {contactContent : contactContent});
 });
 
 
