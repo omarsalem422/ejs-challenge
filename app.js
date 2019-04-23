@@ -15,8 +15,13 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+let homeContent = {
+  home:'Home',
+  homeStartingContent: homeStartingContent
+};
+
 app.get("/", (req, res) => {
-  res.render('home', {home:'Home'});
+  res.render('home', homeContent);
 });
 
 
