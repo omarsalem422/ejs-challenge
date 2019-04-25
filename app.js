@@ -20,8 +20,13 @@ app.get("/", (req, res) => {
   res.render('home', {homeStartingContent: homeStartingContent, posts : posts});
 });
 
-app.get("/posts/:id", (req, res) => {
-  console.log(req.params.id);
+app.get("/posts/:rsid", (req, res) => {
+  posts.forEach((post) => {
+    if (post.title === req.params.rsid) {
+      console.log("Found!")
+    }
+  });
+  
 });
 
 app.get("/about", (req, res) => {
