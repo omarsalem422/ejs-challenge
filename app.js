@@ -25,13 +25,11 @@ app.get("/posts/:rsid", (req, res) => {
   posts.forEach((post) => {
     if (_.lowerCase(post.title ) === _.lowerCase(req.params.rsid))  {
       console.log("Found!")
+      res.render('post', {post : post});
     }
   });
   
 });
-
-
-
 
 app.get("/about", (req, res) => {
   res.render('about', {aboutContent : aboutContent});
